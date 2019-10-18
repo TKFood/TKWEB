@@ -3,6 +3,16 @@
 @{
     ViewData["Title"] = "Create";
 }
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('#selector').change(function () {
+            alert($('#selector').val());
+        });
+    })
+    </script>
+</head>
 
 <h1>Create</h1>
 
@@ -12,6 +22,9 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.Locations, new { id = "ddworkitem", @class = "form-control" })
+            </div>
             <div class="form-group">
                 <label asp-for="Wrokdates" class="control-label"></label>
                 <input asp-for="Wrokdates" class="form-control" />

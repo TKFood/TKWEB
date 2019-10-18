@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TKWEB.Models;
+
 
 namespace TKWEB.Controllers
 {
@@ -23,6 +25,7 @@ namespace TKWEB.Controllers
         // GET: Hridworkhrs
         public async Task<IActionResult> Index()
         {
+            
             return View(await _context.Hridworkhrs.ToListAsync());
         }
 
@@ -47,6 +50,37 @@ namespace TKWEB.Controllers
         // GET: Hridworkhrs/Create
         public IActionResult Create()
         {
+            var NAME = User.Identity.Name;
+
+            var query = (from Hrworks in _context.Hrwork
+                         join Hrrolework in _context.Hrrolework on Hrworks.Workid equals Hrrolework.Workid
+                         join aspNetRoles in _context.AspNetRoles on Hrrolework.Role equals aspNetRoles.Name
+                         join aspNetUserRoles in _context.AspNetUserRoles on aspNetRoles.Id equals aspNetUserRoles.RoleId
+                         join aspNetUsers in _context.AspNetUsers on aspNetUserRoles.UserId equals aspNetUsers.Id
+                         where aspNetUsers.UserName == NAME.ToString()
+                         select new
+                         {
+                             Workid = Hrworks.Workid,
+                             Workname = Hrworks.Workname,
+                         }).ToList();
+
+            ViewBag.Locations = query.Select(c => new SelectListItem { Value = c.Workid.ToString(), Text = c.Workname }).ToList();
+
+
+            //ViewBag.Locations = _context.Hrwork.Select(c => new SelectListItem { Value = c.Workid.ToString(), Text = c.Workname }).ToList();
+
+            ////Creating generic list
+            //List<SelectListItem> ObjList = new List<SelectListItem>()
+            //{
+            //    new SelectListItem { Text = "Latur", Value = "1" },
+            //    new SelectListItem { Text = "Pune", Value = "2" },
+            //    new SelectListItem { Text = "Mumbai", Value = "3" },
+            //    new SelectListItem { Text = "Delhi", Value = "4" },
+
+            //};
+            ////Assigning generic list to ViewBag
+            //ViewBag.Locations = ObjList;
+
             return View();
         }
 

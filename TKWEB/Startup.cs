@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TKWEB.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace TKWEB
 {
@@ -39,6 +40,8 @@ namespace TKWEB
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>() // <-- Add this line
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
