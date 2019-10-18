@@ -64,7 +64,7 @@ namespace TKWEB.Controllers
                              Workname = Hrworks.Workname,
                          }).ToList();
 
-            ViewBag.Locations = query.Select(c => new SelectListItem { Value = c.Workid.ToString(), Text = c.Workname }).ToList();
+            ViewBag.Hrworks = query.Select(c => new SelectListItem { Value = c.Workname.ToString(), Text = c.Workname }).ToList();
 
 
             //ViewBag.Locations = _context.Hrwork.Select(c => new SelectListItem { Value = c.Workid.ToString(), Text = c.Workname }).ToList();

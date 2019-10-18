@@ -23,9 +23,6 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.Locations, new { id = "ddworkitem", @class = "form-control" })
-            </div>
-            <div class="form-group">
                 <label asp-for="Wrokdates" class="control-label"></label>
                 <input asp-for="Wrokdates" class="form-control" />
                 <span asp-validation-for="Wrokdates" class="text-danger"></span>
@@ -37,7 +34,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Workid" class="control-label"></label>
-                <input asp-for="Workid" class="form-control" />
+                <div></div>
+                @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.Hrworks, new { onchange = "document.getElementById('selector').value = this.value;" })
+                <div><br></div>
+                <input asp-for="Workid" class="form-control" id="selector" />
                 <span asp-validation-for="Workid" class="text-danger"></span>
             </div>
             <div class="form-group">
