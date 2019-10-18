@@ -25,8 +25,13 @@ namespace TKWEB.Controllers
         // GET: Hridworkhrs
         public async Task<IActionResult> Index()
         {
-            
-            return View(await _context.Hridworkhrs.ToListAsync());
+            var IdentityNAME = User.Identity.Name;
+            var IdentityNAMEARRAY = IdentityNAME.ToString().Split("@");
+            var SUERNAME = IdentityNAMEARRAY[0].ToString();
+
+            return View(await _context.Hridworkhrs.Where(s => s.Loginid == SUERNAME.ToString()).ToListAsync());
+
+            //return View(await _context.Hridworkhrs.ToListAsync());
         }
 
         // GET: Hridworkhrs/Details/5
@@ -51,10 +56,10 @@ namespace TKWEB.Controllers
         public IActionResult Create()
         {
             var IdentityNAME = User.Identity.Name;
+            var IdentityNAMEARRAY = IdentityNAME.ToString().Split("@");
+            var SUERNAME = IdentityNAMEARRAY[0].ToString();
 
-            var USERNAME = IdentityNAME.ToString().Split("@");
-
-            ViewBag.Name = USERNAME[0].ToString();
+            ViewBag.Name = SUERNAME.ToString();
 
             var query = (from Hrworks in _context.Hrwork
                          join Hrrolework in _context.Hrrolework on Hrworks.Workid equals Hrrolework.Workid
