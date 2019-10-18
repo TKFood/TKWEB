@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Loginid" class="control-label"></label>
-                <input asp-for="Loginid" class="form-control" />
+                <input asp-for="Loginid" class="form-control" value="@(ViewBag.Name ?? String.Empty)"  />
                 <span asp-validation-for="Loginid" class="text-danger"></span>
             </div>
             <div class="form-group">

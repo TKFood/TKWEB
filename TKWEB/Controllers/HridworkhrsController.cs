@@ -50,14 +50,18 @@ namespace TKWEB.Controllers
         // GET: Hridworkhrs/Create
         public IActionResult Create()
         {
-            var NAME = User.Identity.Name;
+            var IdentityNAME = User.Identity.Name;
+
+            var USERNAME = IdentityNAME.ToString().Split("@");
+
+            ViewBag.Name = USERNAME[0].ToString();
 
             var query = (from Hrworks in _context.Hrwork
                          join Hrrolework in _context.Hrrolework on Hrworks.Workid equals Hrrolework.Workid
                          join aspNetRoles in _context.AspNetRoles on Hrrolework.Role equals aspNetRoles.Name
                          join aspNetUserRoles in _context.AspNetUserRoles on aspNetRoles.Id equals aspNetUserRoles.RoleId
                          join aspNetUsers in _context.AspNetUsers on aspNetUserRoles.UserId equals aspNetUsers.Id
-                         where aspNetUsers.UserName == NAME.ToString()
+                         where aspNetUsers.UserName == IdentityNAME.ToString()
                          select new
                          {
                              Workid = Hrworks.Workid,
