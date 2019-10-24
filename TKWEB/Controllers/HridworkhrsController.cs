@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using TKWEB.Models;
 
@@ -21,7 +22,7 @@ namespace TKWEB.Controllers
             _context = context;
         }
 
-        [Authorize(Roles = "Admin,Normal")]
+        [Authorize(Roles = "Admin,Normal,102400")]
         // GET: Hridworkhrs
         public async Task<IActionResult> Index()
         {
@@ -29,8 +30,16 @@ namespace TKWEB.Controllers
             var IdentityNAMEARRAY = IdentityNAME.ToString().Split("@");
             var SUERNAME = IdentityNAMEARRAY[0].ToString();
 
-            return View(await _context.Hridworkhrs.Where(s => s.Loginid == SUERNAME.ToString()).ToListAsync());
+            var user = new SqlParameter("user", SUERNAME);
 
+            string query = "SELECT TOP 10 [ID],[WROKDATES],[LOGINID],[WORKID],[HRS] FROM [TKWEB].[dbo].[HRIDWORKHRS]  WHERE [LOGINID]=@user ORDER BY [WROKDATES] DESC ";
+
+            var result = await _context.Hridworkhrs.FromSqlRaw(query, user).ToListAsync();
+
+
+            return View(result);
+
+            //return View(await _context.Hridworkhrs.Where(s => s.Loginid == SUERNAME.ToString()).ToListAsync());
             //return View(await _context.Hridworkhrs.ToListAsync());
         }
 
