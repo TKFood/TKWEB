@@ -22,15 +22,31 @@ namespace TKWEB.Controllers
         }
 
         [Authorize(Roles = "Admin,Normal,102400")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string STARTDATES,string ENDDATES)
         {
+            string query=null;
+
             var IdentityNAME = User.Identity.Name;
             var IdentityNAMEARRAY = IdentityNAME.ToString().Split("@");
             var SUERNAME = IdentityNAMEARRAY[0].ToString();
 
             var user = new SqlParameter("user", SUERNAME);
 
-            string query = "SELECT TOP 10 [ID],[WROKDATES],[LOGINID],[WORKID],[HRS] FROM [TKWEB].[dbo].[HRIDWORKHRS]  WHERE [LOGINID]=@user AND CONVERT(NVARCHAR,[WROKDATES],112) LIKE SUBSTRING(CONVERT(NVARCHAR,GETDATE(),112),1,6)+'%'  ORDER BY [WROKDATES] DESC ";
+            //ViewBag.account = Request.Form["STARTDATES"];
+            //ViewBag.account = Request.Form["ENDDATES"];
+
+            if(!String.IsNullOrEmpty(STARTDATES)&& !String.IsNullOrEmpty(ENDDATES))
+            {
+                query = "SELECT TOP 10 [ID],[WROKDATES],[LOGINID],[WORKID],[HRS] FROM [TKWEB].[dbo].[HRIDWORKHRS]  WHERE [LOGINID]=@user AND CONVERT(NVARCHAR,[WROKDATES],112) LIKE SUBSTRING(CONVERT(NVARCHAR,GETDATE(),112),1,6)+'%'  ORDER BY [WROKDATES] DESC ";
+            }
+            else 
+            {
+                query = "SELECT TOP 1 [ID],[WROKDATES],[LOGINID],[WORKID],[HRS] FROM [TKWEB].[dbo].[HRIDWORKHRS]  WHERE [LOGINID]=@user AND CONVERT(NVARCHAR,[WROKDATES],112) LIKE SUBSTRING(CONVERT(NVARCHAR,GETDATE(),112),1,6)+'%'  ORDER BY [WROKDATES] DESC ";
+            }
+           
+           
+         
+            
 
             var result = await _context.Hridworkhrs.FromSqlRaw(query, user).ToListAsync();
 
@@ -40,5 +56,8 @@ namespace TKWEB.Controllers
             //return View(await _context.Hridworkhrs.Where(s => s.Loginid == SUERNAME.ToString()).ToListAsync());
             //return View(await _context.Hridworkhrs.ToListAsync());
         }
+
+     
+
     }
 }
