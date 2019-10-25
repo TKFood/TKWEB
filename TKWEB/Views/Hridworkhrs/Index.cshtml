@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">建立工時</a>
 </p>
 
 @using (Html.BeginForm("Index", "Hridworkhrs", FormMethod.Get))
@@ -55,9 +55,9 @@
                     @Html.DisplayFor(modelItem => item.Hrs)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">修改</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">明細</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">刪除</a>
                 </td>
             </tr>
         }
