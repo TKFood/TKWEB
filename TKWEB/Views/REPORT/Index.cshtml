@@ -5,22 +5,16 @@
 }
 
 <h1>報表</h1>
+@using (Html.BeginForm("Index", "REPORT", FormMethod.Get))
+{
+    <label>起始日期 格式=年月日 </label>
+    <input type="text" id=STARTDATES name=STARTDATES value="@DateTime.Now.ToString("yyyyMMdd")">
+    <label>結束日期 格式=年月日 </label>    
+    <input type="text" id=ENDDATES name=ENDDATES value="@DateTime.Now.ToString("yyyyMMdd")">
+    <input type="submit" value="查詢" />
+    <p></p>
+}
 
-<table class="table">
-    <form>
-        <p></p>
-        <input type="text" id=STARTDATES name=STARTDATES value="20191024">
-        <p></p>
-        <input type="text" id=ENDDATES name=ENDDATES value="20191024">
-        <p></p>
-        <input type="submit" value="查詢" />
-        </p>
-
-    </form>
-
-
-
-</table>
 <table class="table">
     <thead>
         <tr>
@@ -40,22 +34,23 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Wrokdates)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Loginid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Workid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hrs)
-            </td>
-            
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wrokdates)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Loginid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Workid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hrs)
+                </td>
+
+            </tr>
+        }
     </tbody>
 </table>
