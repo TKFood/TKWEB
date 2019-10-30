@@ -22,7 +22,7 @@ namespace TKWEB.Controllers
             _context = context;
         }
 
-        [Authorize(Roles = "Admin,Normal,102400")]
+        [Authorize(Roles = "Admin,Normal,102400,102500")]
         // GET: Hridworkhrs
         public async Task<IActionResult> Index(string STARTDATES, string ENDDATES)
         {

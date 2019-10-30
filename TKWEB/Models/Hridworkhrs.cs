@@ -13,6 +13,7 @@ namespace TKWEB.Models
         [DisplayName("日期")]
         [Required]
         public DateTime? Wrokdates { get; set; }
+
         [DisplayName("工號")]
         [Required]
         public string Loginid { get; set; }
