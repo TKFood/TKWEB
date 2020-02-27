@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<TKWEB.Models.EventViewModel>
 
 @{
-   Layout = null;
-   ViewData["Title"] = "Index";
+    Layout = null;
+    //ViewData["Title"] = "Index";
 }
 
 
@@ -53,18 +53,18 @@
 					},
             		firstDay: 1, //The day that each week begins (Monday=1)
             		slotMinutes: 60,
-            		//events: '@Url.RouteUrl(new{ action="GetEvents", controller="EventViewModels"})'
-                    events: [
-                        {
-                            title: 'All Day Event',
-                            start: '2020-02-26',
-                            end: '2020-02-27'
-                        },
-                        { 
-                            title: 'All Day Event2',
-                            start: '2020-02-21'
-                        }   
-                    ]
+            		events: '@Url.RouteUrl(new{ action="GetEvents", controller="EventViewModels"})'
+                    //events: [
+                    //    {
+                    //        title: 'All Day Event',
+                    //        start: '2020-02-26',
+                    //        end: '2020-02-27'
+                    //    },
+                    //    { 
+                    //        title: 'All Day Event2',
+                    //        start: '2020-02-21'
+                    //    }   
+                    //]
         		});
     		});
     </script>

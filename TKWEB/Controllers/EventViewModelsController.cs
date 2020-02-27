@@ -39,23 +39,36 @@ namespace TKWEB.Controllers
             start = DateTime.Today.AddDays(-14);
             end = DateTime.Today.AddDays(-11);
 
-            for (var i = 1; i <= 5; i++)
+            //for (var i = 1; i <= 5; i++)
+            //{
+            //    events.Add(new EventViewModel()
+            //    {
+            //        id = i,
+            //        title = "Event " + i,
+            //        start = start.ToString(),
+            //        end = end.ToString(),
+            //        allDay = false
+            //    });
+
+            //    start = start.AddDays(7);
+            //    end = end.AddDays(7);
+            //}
+
+            events.Add(new EventViewModel()
             {
-                events.Add(new EventViewModel()
-                {
-                    id = i,
-                    title = "Event " + i,
-                    start = start.ToString(),
-                    end = end.ToString(),
-                    allDay = false
-                });
+                id = 1,
+                title = "Event " + 1,
+                start = DateTime.Today.ToString("yyyy-MM-dd")
+            }) ;
 
-                start = start.AddDays(7);
-                end = end.AddDays(7);
-            }
+            events.Add(new EventViewModel()
+            {
+                id = 2,
+                title = "Event " + 2,
+                start = "2020-02-20"
+            });
 
-
-            return Json(events.ToArray(), JsonRequestBehavior.AllowGet);
+            return Json(events);
         }
 
         // GET: EventViewModels/Details/5
