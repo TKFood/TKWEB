@@ -70,8 +70,8 @@ namespace TKWEB.Controllers
             //    allDay = true
             //});
 
-            //query = "SELECT row_number() OVER(ORDER BY TD005) AS 'id',TD005 AS 'title',TD012 AS 'start',TD012 AS 'end' ,'' AS allDay  FROM [TK].dbo.PURTD WHERE TD012='20200227' ";
-            query = "SELECT [id],[title],CONVERT(varchar(100), [start], 23) as [start]  ,CONVERT(varchar(100), [end], 23) [end],[allDay] FROM [TKWEB].[dbo].[EventViewModel]";
+            query = "SELECT row_number() OVER(ORDER BY TD005) AS 'id',TD005 AS 'title',substring(TD012,1,4)+'-'+substring(TD012,5,2)+'-'+substring(TD012,7,2)  AS 'start',substring(TD012,1,4)+'-'+substring(TD012,5,2)+'-'+substring(TD012,7,2)   AS 'end' ,convert(bit,1) AS allDay  FROM [TK].dbo.PURTD WHERE TD012='20200227' ";
+            //query = "SELECT [id],[title],CONVERT(varchar(100), [start], 23) as [start]  ,CONVERT(varchar(100), [end], 23) [end],convert(bit,1) [allDay] FROM [TKWEB].[dbo].[EventViewModel]";
             var result = _context.EventViewModel.FromSqlRaw(query).ToList();
 
 

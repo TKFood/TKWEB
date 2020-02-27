@@ -8,7 +8,7 @@ namespace TKWEB.Models
 {
     public class EventViewModel
     {
-        public Int32 id { get; set; }
+        public Int64 id { get; set; }
 
         public String title { get; set; }
 
