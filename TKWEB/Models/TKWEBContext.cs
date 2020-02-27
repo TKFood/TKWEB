@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using TKWEB.Models;
 
 namespace TKWEB.Models
 {
@@ -194,5 +195,7 @@ namespace TKWEB.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<TKWEB.Models.EventViewModel> EventViewModel { get; set; }
     }
 }
