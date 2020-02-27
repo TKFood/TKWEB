@@ -54,18 +54,21 @@ namespace TKWEB.Controllers
             //    end = end.AddDays(7);
             //}
 
+            //allDay要設定ture，不然event會多出 12a
             events.Add(new EventViewModel()
             {
                 id = 1,
                 title = "Event " + 1,
-                start = DateTime.Today.ToString("yyyy-MM-dd")
+                start = DateTime.Today.ToString("yyyy-MM-dd"),
+                allDay=true
             }) ;
 
             events.Add(new EventViewModel()
             {
                 id = 2,
                 title = "Event " + 2,
-                start = "2020-02-20"
+                start = "2020-02-20",
+                allDay = true
             });
 
             return Json(events);
