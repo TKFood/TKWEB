@@ -36,8 +36,7 @@ namespace TKWEB.Controllers
         {
             var viewModel = new EventViewModel();
             var events = new List<EventViewModel>();
-            start = DateTime.Today.AddDays(-14);
-            end = DateTime.Today.AddDays(-11);
+            string query = null;
 
             //for (var i = 1; i <= 5; i++)
             //{
@@ -55,21 +54,38 @@ namespace TKWEB.Controllers
             //}
 
             //allDay要設定ture，不然event會多出 12a
-            events.Add(new EventViewModel()
-            {
-                id = 1,
-                title = "Event " + 1,
-                start = DateTime.Today.ToString("yyyy-MM-dd"),
-                allDay=true
-            }) ;
+            //events.Add(new EventViewModel()
+            //{
+            //    id = 1,
+            //    title = "Event " + 1,
+            //    start = DateTime.Today.ToString("yyyy-MM-dd"),
+            //    allDay=true
+            //}) ;
 
-            events.Add(new EventViewModel()
+            //events.Add(new EventViewModel()
+            //{
+            //    id = 2,
+            //    title = "Event " + 2,
+            //    start = "2020-02-20",
+            //    allDay = true
+            //});
+
+            //query = "SELECT row_number() OVER(ORDER BY TD005) AS 'id',TD005 AS 'title',TD012 AS 'start',TD012 AS 'end' ,'' AS allDay  FROM [TK].dbo.PURTD WHERE TD012='20200227' ";
+            query = "SELECT [id],[title],CONVERT(varchar(100), [start], 23) as [start]  ,CONVERT(varchar(100), [end], 23) [end],[allDay] FROM [TKWEB].[dbo].[EventViewModel]";
+            var result = _context.EventViewModel.FromSqlRaw(query).ToList();
+
+
+            foreach (var ECENT in result)
             {
-                id = 2,
-                title = "Event " + 2,
-                start = "2020-02-20",
-                allDay = true
-            });
+                events.Add(new EventViewModel()
+                {
+                    id = ECENT.id,
+                    title = ECENT.title,
+                    start = ECENT.start,
+                    end = ECENT.end,
+                    allDay = ECENT.allDay
+                });
+            }
 
             return Json(events);
         }

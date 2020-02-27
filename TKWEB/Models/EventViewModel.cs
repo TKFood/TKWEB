@@ -8,7 +8,7 @@ namespace TKWEB.Models
 {
     public class EventViewModel
     {
-        public Int64 id { get; set; }
+        public Int32 id { get; set; }
 
         public String title { get; set; }
 
@@ -16,6 +16,6 @@ namespace TKWEB.Models
 
         public String end { get; set; }
 
-        public bool allDay { get; set; }
+        public bool allDay { get ; set; }
     }
 }
