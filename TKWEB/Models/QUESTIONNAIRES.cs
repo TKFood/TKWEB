@@ -28,47 +28,47 @@ namespace TKWEB.Models
         public string DEP { get; set; }
 
         [DisplayName("問題1")]
-        [Required]
+        //[Required]
         public string QUESTION1 { get; set; }
 
         [DisplayName("問題2")]
-        [Required]
+        //[Required]
         public string QUESTION2 { get; set; }
 
         [DisplayName("問題3")]
-        [Required]
+        //[Required]
         public string QUESTION3 { get; set; }
 
         [DisplayName("問題4")]
-        [Required]
+        //[Required]
         public string QUESTION4 { get; set; }
 
         [DisplayName("問題5")]
-        [Required]
+        //[Required]
         public string QUESTION5 { get; set; }
 
         [DisplayName("問題6")]
-        [Required]
+        //[Required]
         public string QUESTION6 { get; set; }
 
         [DisplayName("問題7")]
-        [Required]
+        //[Required]
         public string QUESTION7 { get; set; }
 
         [DisplayName("問題8")]
-        [Required]
+        //[Required]
         public string QUESTION8 { get; set; }
 
         [DisplayName("問題9")]
-        [Required]
+        //[Required]
         public string QUESTION9 { get; set; }
 
         [DisplayName("問題10")]
-        [Required]
+        //[Required]
         public string QUESTION10 { get; set; }
 
         [DisplayName("問題11")]
-        [Required]
+        //[Required]
         public string QUESTION11 { get; set; }
     }
 }

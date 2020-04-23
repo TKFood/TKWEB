@@ -1,0 +1,119 @@
+﻿@model IEnumerable<TKWEB.Models.QUESTIONNAIRES>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DATES)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DEP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUESTION11)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUESTION11)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
