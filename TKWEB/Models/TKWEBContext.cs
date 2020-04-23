@@ -27,6 +27,8 @@ namespace TKWEB.Models
         public virtual DbSet<Hrrolework> Hrrolework { get; set; }
         public virtual DbSet<Hrwork> Hrwork { get; set; }
 
+        public virtual DbSet<QUESTIONNAIRES> QUESTIONNAIRES { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -197,5 +199,7 @@ namespace TKWEB.Models
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
         public DbSet<TKWEB.Models.EventViewModel> EventViewModel { get; set; }
+
+  
     }
 }

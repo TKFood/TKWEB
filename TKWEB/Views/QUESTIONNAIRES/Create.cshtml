@@ -1,0 +1,53 @@
+﻿@model TKWEB.Models.QUESTIONNAIRES
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>QUESTIONNAIRES</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DATES" class="control-label"></label>
+                <input asp-for="DATES" class="form-control" />
+                <span asp-validation-for="DATES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NO" class="control-label"></label>
+                <input asp-for="NO" class="form-control" />
+                <span asp-validation-for="NO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NAME" class="control-label"></label>
+                <input asp-for="NAME" class="form-control" />
+                <span asp-validation-for="NAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QUESTION1" class="control-label"></label>
+                <input asp-for="QUESTION1" class="form-control" />
+                <span asp-validation-for="QUESTION1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QUESTION2" class="control-label"></label>
+                <input asp-for="QUESTION2" class="form-control" />
+                <span asp-validation-for="QUESTION2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
