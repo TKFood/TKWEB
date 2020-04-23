@@ -29,6 +29,9 @@ namespace TKWEB.Models
 
         public virtual DbSet<QUESTIONNAIRES> QUESTIONNAIRES { get; set; }
 
+        public virtual DbSet<QUESTIONS> QUESTIONS { get; set; }
+        public virtual DbSet<QUESTIONDEP> QUESTIONDEP { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

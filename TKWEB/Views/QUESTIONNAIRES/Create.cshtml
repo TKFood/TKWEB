@@ -1,7 +1,9 @@
 ﻿@model TKWEB.Models.QUESTIONNAIRES
 
+
 @{
     ViewData["Title"] = "Create";
+    
 }
 
 <h1>Create</h1>
@@ -29,13 +31,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="DEP" class="control-label"></label>
-                <input asp-for="DEP" class="form-control" />
+                <div></div>
+                @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.QUESTIONDEPLIST, new { onchange = "document.getElementById('selector').value = this.value;" })
+                <div><br></div>
+                <input asp-for="DEP" class="form-control" id="selector" >
                 <span asp-validation-for="DEP" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="QUESTION1" class="control-label"></label>
                 <input asp-for="QUESTION1" class="form-control" />
-                <span asp-validation-for="QUESTION1" class="text-danger"></span>
+                    <span asp-validation-for="QUESTION1" class="text-danger"></span>
+
             </div>
             <div class="form-group">
                 <label asp-for="QUESTION2" class="control-label"></label>

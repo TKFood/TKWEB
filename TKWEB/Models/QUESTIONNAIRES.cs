@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+
 
 namespace TKWEB.Models
 {
@@ -27,7 +27,7 @@ namespace TKWEB.Models
         [Required]
         public string DEP { get; set; }
 
-        [DisplayName("問題1")]
+        [DisplayName("請問24小時內，您與您同住的家屬/室友否出現以下微狀(複選)?")]
         //[Required]
         public string QUESTION1 { get; set; }
 
@@ -70,5 +70,7 @@ namespace TKWEB.Models
         [DisplayName("問題11")]
         //[Required]
         public string QUESTION11 { get; set; }
+
+      
     }
 }

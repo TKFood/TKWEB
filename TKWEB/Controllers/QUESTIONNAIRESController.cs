@@ -45,6 +45,13 @@ namespace TKWEB.Controllers
         // GET: QUESTIONNAIRES/Create
         public IActionResult Create()
         {
+            List<QUESTIONDEP> QUESTIONDEPLIST = new List<QUESTIONDEP>();
+
+            QUESTIONDEPLIST = (from QUESTIONDEP in _context.QUESTIONDEP select QUESTIONDEP).ToList();          
+
+            ViewBag.QUESTIONDEPLIST = QUESTIONDEPLIST.Select(c => new SelectListItem { Value = c.DEPID, Text = c.DEPNAME }).ToList();
+
+
             return View();
         }
 
@@ -54,9 +61,12 @@ namespace TKWEB.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,DATES,NO,NAME,DEP,QUESTION1,QUESTION2,QUESTION3,QUESTION4,QUESTION5,QUESTION6,QUESTION7,QUESTION8,QUESTION9,QUESTION10,QUESTION11")] QUESTIONNAIRES qUESTIONNAIRES)
-        {
+        {            
             if (ModelState.IsValid)
             {
+                //qUESTIONNAIRES.QUESTION1 = "ABCD";
+
+
                 qUESTIONNAIRES.ID = Guid.NewGuid();
                 _context.Add(qUESTIONNAIRES);
                 await _context.SaveChangesAsync();
