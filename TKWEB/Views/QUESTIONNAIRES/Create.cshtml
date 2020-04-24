@@ -97,7 +97,12 @@
             </div>
             <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION5" class="control-label"></label>
-                <input asp-for="QUESTION5" class="form-control" />
+                <br></br>
+                @Html.RadioButtonFor(model => model.QUESTION5, "否")
+                否
+                <br></br>
+                @Html.RadioButtonFor(model => model.QUESTION5, "是，請於下題填寫何時接觸、何地接觸、何人接觸")
+                是，請於下題填寫何時接觸、何地接觸、何人接觸
                 <span asp-validation-for="QUESTION5" class="text-danger"></span>
             </div>
             <div class="form-group" style="width: 1000px;">
@@ -107,7 +112,12 @@
             </div>
             <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION7" class="control-label"></label>
-                <input asp-for="QUESTION7" class="form-control" />
+                <br></br>
+                @Html.RadioButtonFor(model => model.QUESTION7, "否")
+                否
+                <br></br>
+                @Html.RadioButtonFor(model => model.QUESTION7, "是，請於下題填寫何時、何地、何人、共約幾人")
+                是，請於下題填寫何時、何地、何人、共約幾人
                 <span asp-validation-for="QUESTION7" class="text-danger"></span>
             </div>
             <div class="form-group" style="width: 1000px;">
@@ -117,7 +127,12 @@
             </div>
             <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION9" class="control-label"></label>
-                <input asp-for="QUESTION9" class="form-control" />
+                <br></br>
+                @Html.RadioButtonFor(model => model.QUESTION9, "否")
+                否
+                <br></br>
+                @Html.RadioButtonFor(model => model.QUESTION9, "是，請於下題填寫何時、何地、何人、何種交通工具、班次")
+                是，請於下題填寫何時、何地、何人、何種交通工具、班次
                 <span asp-validation-for="QUESTION9" class="text-danger"></span>
             </div>
             <div class="form-group" style="width: 1000px;">
