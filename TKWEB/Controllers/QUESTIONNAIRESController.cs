@@ -68,9 +68,22 @@ namespace TKWEB.Controllers
 
             //預設選擇哪一筆
             //selectList.Where(q => q.Value == "value-2").First().Selected = true;
-
             ViewBag.DEPselectList = DEPselectList;
 
+            // Build your models (example)
+            var STATUSList = new List<SelectListItem>()
+            {
+                new SelectListItem {Text="否", Value="否" },
+                new SelectListItem {Text="發燒（額溫高於37.5度、耳溫高於38度、腋溫高於38度）", Value="發燒（額溫高於37.5度、耳溫高於38度、腋溫高於38度）" },
+                new SelectListItem {Text="乾咳", Value="乾咳" },
+                new SelectListItem {Text="嗅、味覺異常", Value="嗅、味覺異常" },
+                new SelectListItem {Text="呼吸急促或困難", Value="呼吸急促或困難" },
+                new SelectListItem {Text="不明原因腹瀉", Value="不明原因腹瀉" },
+                new SelectListItem {Text="有呼吸道症狀（鼻塞、流鼻水、咳嗽）", Value="有呼吸道症狀（鼻塞、流鼻水、咳嗽）" }          
+
+            };
+            // Store your model in the ViewBag
+            ViewBag.STATUSList = STATUSList;
 
             return View();
         }
