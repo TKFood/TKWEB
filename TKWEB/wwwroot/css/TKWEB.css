@@ -2,3 +2,28 @@
 {
    background-color:#FAF2FF;   
 }
+
+.form-group {
+   width:100%;
+   border:1px #ffffff solid;
+   background-color:#ffffff;
+   padding:20px;   
+}
+
+.form-group-DEP {
+    width: 200%;
+    border: 1px #ffffff solid;
+    background-color: #ffffff;
+    padding: 20px;
+}
+.DropDownListFor {
+    width: 100%;
+    padding-right: 15px;
+    margin-left: 20px;
+}
+
+.checkbox {
+    width: 100%;
+    padding-right: 15px;
+    margin-left: 20px;
+}
