@@ -45,11 +45,31 @@ namespace TKWEB.Controllers
         // GET: QUESTIONNAIRES/Create
         public IActionResult Create()
         {
-            List<QUESTIONDEP> QUESTIONDEPLIST = new List<QUESTIONDEP>();
+            //ViewBag讀取DB的方法，DB、TABLE跟MODEL要先建立好才可以用
+            //List<QUESTIONDEP> QUESTIONDEPLIST = new List<QUESTIONDEP>();
+            //QUESTIONDEPLIST = (from QUESTIONDEP in _context.QUESTIONDEP select QUESTIONDEP).ToList(); 
+            //ViewBag.QUESTIONDEPLIST = QUESTIONDEPLIST.Select(c => new SelectListItem { Value = c.DEPID, Text = c.DEPNAME }).ToList();
 
-            QUESTIONDEPLIST = (from QUESTIONDEP in _context.QUESTIONDEP select QUESTIONDEP).ToList();          
+            //ViewBag直接設定
+            var DEPselectList = new List<SelectListItem>()
+            {
+                new SelectListItem {Text="總經理室(含經營分析中心、資訊管理中心、人資管理中心、新事業發展中心)", Value="總經理室(含經營分析中心、資訊管理中心、人資管理中心、新事業發展中心)" },
+                new SelectListItem {Text="職安室", Value="職安室" },
+                new SelectListItem {Text="管理部(含總務課)", Value="管理部(含總務課)" },
+                new SelectListItem {Text="財務部(含成本課、會計課、財務課)", Value="財務部(含成本課、會計課、財務課)" },
+                new SelectListItem {Text="資材部(含採購課)", Value="資材部(含採購課)" },
+                new SelectListItem {Text="研發部(含產品開發課、研發課)", Value="研發部(含產品開發課、研發課)" },
+                new SelectListItem {Text="品保部(含文管中心、品檢課、品保課)", Value="品保部(含文管中心、品檢課、品保課)" },
+                new SelectListItem {Text="生產部(含倉儲課、工程課、製造課、手工課、內包課、外包課、生管課)", Value="生產部(含倉儲課、工程課、製造課、手工課、內包課、外包課、生管課)" },
+                new SelectListItem {Text="事業拓展部(含大陸業務課、國外業務課、國內業務課)", Value="事業拓展部(含大陸業務課、國外業務課、國內業務課)" },
+                new SelectListItem {Text="營銷部(含電子商務課、門市課、觀光課)", Value="營銷部(含電子商務課、門市課、觀光課)" },
+                new SelectListItem {Text="行銷企劃部(含行銷企劃課、設計課)", Value="行銷企劃部(含行銷企劃課、設計課)" }
+            };
 
-            ViewBag.QUESTIONDEPLIST = QUESTIONDEPLIST.Select(c => new SelectListItem { Value = c.DEPID, Text = c.DEPNAME }).ToList();
+            //預設選擇哪一筆
+            //selectList.Where(q => q.Value == "value-2").First().Selected = true;
+
+            ViewBag.DEPselectList = DEPselectList;
 
 
             return View();

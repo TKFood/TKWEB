@@ -4,7 +4,23 @@
 @{
     ViewData["Title"] = "Create";
     
-}
+    List<SelectListItem> listItems= new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+        {
+            Text = "ITEM-1",
+            Value = "ITEM-1"
+        });
+    listItems.Add(new SelectListItem
+        {
+            Text = "ITEM-2",
+            Value = "ITEM-2"           
+        });
+    listItems.Add(new SelectListItem
+        {
+            Text = "ITEM-3",
+            Value = "ITEM-3"
+        });
+    }
 
 <h1>Create</h1>
 
@@ -32,9 +48,12 @@
             <div class="form-group">
                 <label asp-for="DEP" class="control-label"></label>
                 <div></div>
-                @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.QUESTIONDEPLIST, new { onchange = "document.getElementById('selector').value = this.value;" })
+                @*@Html.DropDownListFor(model => model.DEP, listItems, "請選擇")*@
+
+                @Html.DropDownListFor(model => model.DEP, new SelectList(ViewBag.DEPselectList,"Value","Text"))
+                
                 <div><br></div>
-                <input asp-for="DEP" class="form-control" id="selector" >
+                @*<input asp-for="DEP" class="form-control" id="selector">*@
                 <span asp-validation-for="DEP" class="text-danger"></span>
             </div>
             <div class="form-group">
