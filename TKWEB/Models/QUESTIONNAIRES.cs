@@ -28,46 +28,46 @@ namespace TKWEB.Models
         public string DEP { get; set; }
 
         [DisplayName("請問24小時內，您與您同住的家屬/室友否出現以下微狀(複選)?")]
-        //[Required]
+        [Required]
         public string QUESTION1 { get; set; }
 
-        [DisplayName("問題2")]
+        [DisplayName("承上題，如有症狀請簡短說明何時、何地、何人")]
         //[Required]
         public string QUESTION2 { get; set; }
 
-        [DisplayName("問題3")]
-        //[Required]
+        [DisplayName("請問24小時內您與您的同住的家屬/室友是否從其他國家入境台灣？")]
+        [Required]
         public string QUESTION3 { get; set; }
 
-        [DisplayName("問題4")]
+        [DisplayName("承上題，簡短說明何時、何地、何人、班次?")]
         //[Required]
         public string QUESTION4 { get; set; }
 
-        [DisplayName("問題5")]
-        //[Required]
+        [DisplayName("請問24小時內您與您的同住的家屬/室友是否曾與已確診/疑似/正在接受檢驗之新型冠狀病毒肺炎病患有接觸？")]
+        [Required]
         public string QUESTION5 { get; set; }
 
-        [DisplayName("問題6")]
+        [DisplayName("承上題，簡短說明何時接觸、何地接觸、何人接觸?")]
         //[Required]
         public string QUESTION6 { get; set; }
 
-        [DisplayName("問題7")]
-        //[Required]
+        [DisplayName("請問24小時內您與您的同住的家屬/室友是否曾前往非閉密空間但人潮擁擠的公共場所(無適當社交距離1M)，如旅遊地區、夜市、風景地區、寺廟等？")]
+        [Required]
         public string QUESTION7 { get; set; }
 
-        [DisplayName("問題8")]
+        [DisplayName("承上題，簡短說明何時、何地、何人、共約幾人")]
         //[Required]
         public string QUESTION8 { get; set; }
 
-        [DisplayName("問題9")]
-        //[Required]
+        [DisplayName("請問24小時內您與您的同住的家屬/室友是否曾搭乘大眾交通運輸工具（公車、台鐵、高鐵、捷運、渡輪、客運、遊覽車…）")]
+        [Required]
         public string QUESTION9 { get; set; }
 
-        [DisplayName("問題10")]
+        [DisplayName("承上題，簡短說明何時、何地、何人、何種交通工具、班次?")]
         //[Required]
         public string QUESTION10 { get; set; }
 
-        [DisplayName("問題11")]
+        [DisplayName("其他想告知的事項")]
         //[Required]
         public string QUESTION11 { get; set; }
 

@@ -73,52 +73,59 @@
                 <span asp-validation-for="QUESTION1" class="text-danger"></span>
 
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION2" class="control-label"></label>
                 <input asp-for="QUESTION2" class="form-control" />
                 <span asp-validation-for="QUESTION2" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION3" class="control-label"></label>
-                <input asp-for="QUESTION3" class="form-control" />
+                <br></br>
+                @Html.RadioButtonFor(model => model.QUESTION3, "否")
+                否
+                <br></br>
+                @Html.RadioButtonFor(model => model.QUESTION3, "是，請於下題填寫何時、何地、何人、班次")
+                是，請於下題填寫何時、何地、何人、班次
+
+                @*<input asp-for="QUESTION3" class="form-control" />*@
                 <span asp-validation-for="QUESTION3" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION4" class="control-label"></label>
                 <input asp-for="QUESTION4" class="form-control" />
                 <span asp-validation-for="QUESTION4" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION5" class="control-label"></label>
                 <input asp-for="QUESTION5" class="form-control" />
                 <span asp-validation-for="QUESTION5" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION6" class="control-label"></label>
                 <input asp-for="QUESTION6" class="form-control" />
                 <span asp-validation-for="QUESTION6" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION7" class="control-label"></label>
                 <input asp-for="QUESTION7" class="form-control" />
                 <span asp-validation-for="QUESTION7" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION8" class="control-label"></label>
                 <input asp-for="QUESTION8" class="form-control" />
                 <span asp-validation-for="QUESTION8" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION9" class="control-label"></label>
                 <input asp-for="QUESTION9" class="form-control" />
                 <span asp-validation-for="QUESTION9" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION10" class="control-label"></label>
                 <input asp-for="QUESTION10" class="form-control" />
                 <span asp-validation-for="QUESTION10" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="width: 1000px;">
                 <label asp-for="QUESTION11" class="control-label"></label>
                 <input asp-for="QUESTION11" class="form-control" />
                 <span asp-validation-for="QUESTION11" class="text-danger"></span>
