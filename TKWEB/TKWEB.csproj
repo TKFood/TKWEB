@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-TKWEB-8CE02D5D-E365-4A25-AB06-B169DF7B4CD0</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\css\TKWEB.css" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="jQuery.UI.Combined" Version="1.12.1" />
@@ -19,11 +23,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Content\" />
   </ItemGroup>
 
 </Project>
