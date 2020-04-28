@@ -96,6 +96,7 @@ namespace TKWEB.Controllers
             ViewBag.STATUSList = STATUSList;
 
             return View();
+            
         }
 
         // POST: QUESTIONNAIRES/Create
@@ -113,9 +114,12 @@ namespace TKWEB.Controllers
                 qUESTIONNAIRES.ID = Guid.NewGuid();
                 _context.Add(qUESTIONNAIRES);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
+                return View("OK");
             }
-            return View(qUESTIONNAIRES);
+
+            //return View(qUESTIONNAIRES);
+            return View("OK");
         }
 
         // GET: QUESTIONNAIRES/Edit/5
