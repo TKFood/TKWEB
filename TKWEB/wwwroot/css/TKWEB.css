@@ -3,6 +3,10 @@
    background-color:#FAF2FF;   
 }
 
+section {
+    display: table;
+}
+
 .form-group {
     width: 100%;
     border: 1px #ffffff solid;
@@ -50,4 +54,12 @@
 
 .control-label {
     width: 100%;
+}
+
+.finishdiv {
+    width: auto;
+    height: 200px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 36px;
 }

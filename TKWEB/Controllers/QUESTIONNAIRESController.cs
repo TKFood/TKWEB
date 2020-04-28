@@ -24,6 +24,15 @@ namespace TKWEB.Controllers
             return View(await _context.QUESTIONNAIRES.ToListAsync());
         }
 
+        /// <summary>
+        /// 新增填寫完成頁
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> OK()
+        {
+            return View(await _context.QUESTIONNAIRES.ToListAsync());
+        }
+
         // GET: QUESTIONNAIRES/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
