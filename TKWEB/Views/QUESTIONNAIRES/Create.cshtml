@@ -26,10 +26,14 @@
     });
 }
 <body>
-
-    <h1>Create</h1>
-
-    <h4>QUESTIONNAIRES</h4>
+    <div class="form-group">
+        <h1>每日防疫問卷</h1>
+        <h4>周一至周日都需填寫一次 (若未填寫或有狀況，上班日將會有防疫人員電話詢問)</h4>
+        <h4>* 表示必填</h4>
+        <h4>(日班請於每日早上6~10點前填寫完畢)</h4>
+        <h4>(夜班請於每日下午12點~16點前填寫完畢)</h4>
+    </div>
+   
     <hr />
     <div class="container-fluid">
         <div class="col-md-4">
@@ -186,7 +190,7 @@
 </script>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    @*<a asp-action="Index">Back to List</a>*@
 </div>
 
 @section Scripts {
