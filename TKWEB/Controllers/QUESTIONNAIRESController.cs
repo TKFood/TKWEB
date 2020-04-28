@@ -80,7 +80,7 @@ namespace TKWEB.Controllers
                 new SelectListItem {Text="呼吸急促或困難", Value="呼吸急促或困難" },
                 new SelectListItem {Text="不明原因腹瀉", Value="不明原因腹瀉" },
                 new SelectListItem {Text="有呼吸道症狀（鼻塞、流鼻水、咳嗽）", Value="有呼吸道症狀（鼻塞、流鼻水、咳嗽）" },
-                   new SelectListItem {Text="否,以上皆無", Value="否,以上皆無" }
+                new SelectListItem {Text="否,以上皆無", Value="否,以上皆無" }
 
             };
             // Store your model in the ViewBag
